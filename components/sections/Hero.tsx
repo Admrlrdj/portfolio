@@ -2,7 +2,9 @@ import type { CSSProperties } from "react";
 import { siNextdotjs, siPython, siUltralytics } from "simple-icons";
 import { profile } from "@/content/profile";
 import { Avatar3D } from "@/components/fx/Avatar3D";
+import { DotField } from "@/components/fx/DotField";
 import { DraggableSticker } from "@/components/fx/DraggableSticker";
+import { SpeechBubble } from "@/components/fx/SpeechBubble";
 import { Magnetic } from "@/components/fx/Magnetic";
 import { ParallaxScope } from "@/components/fx/ParallaxScope";
 import { SplitText } from "@/components/fx/SplitText";
@@ -17,7 +19,8 @@ const underline = { "--len": 330 } as CSSProperties;
 export function Hero() {
   return (
     <ParallaxScope id="beranda" className="page">
-      <div className="wrap grid items-center gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] md:gap-16">
+      <DotField />
+      <div className="wrap relative z-[1] grid items-center gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] md:gap-16">
         <div className="min-w-0">
           <p className="mono text-muted">
             <TV v={profile.role} />
@@ -57,6 +60,7 @@ export function Hero() {
         </div>
 
         <Reveal className="relative mx-auto w-full max-w-[22rem] md:max-w-none">
+          <SpeechBubble />
           <div className="px px-mid">
             <Avatar3D />
           </div>

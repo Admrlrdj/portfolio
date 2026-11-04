@@ -218,6 +218,7 @@ export function Avatar3D() {
     dizzyUntil.current = performance.now() + DIZZY_MS;
     el.dataset.dizzy = "true";
     el.dataset.mood = "dizzy";
+    window.dispatchEvent(new CustomEvent("avatar:react", { detail: "dizzy" }));
     later(() => {
       el.dataset.dizzy = "false";
       el.dataset.mood = drag.current ? "surprised" : restMood();
@@ -275,6 +276,7 @@ export function Avatar3D() {
     if (tapped && el && performance.now() >= dizzyUntil.current) {
       el.dataset.wave = "true";
       setMood("happy");
+      window.dispatchEvent(new CustomEvent("avatar:react", { detail: "wave" }));
       later(() => {
         el.dataset.wave = "false";
         setMood(restMood());
