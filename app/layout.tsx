@@ -37,7 +37,7 @@ export const viewport: Viewport = {
 };
 
 // Dijalankan sebelum cat pertama agar tema tersimpan tidak berkedip; default tetap terang.
-const themeScript = `try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}try{var d=document.documentElement;d.dataset.intro=location.pathname==="/"&&!matchMedia("(prefers-reduced-motion: reduce)").matches?"run":"skip"}catch(e){}`;
+const themeScript = `try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}try{var d=document.documentElement;d.dataset.intro=location.pathname==="/"&&!matchMedia("(prefers-reduced-motion: reduce)").matches?"run":"skip";if(d.dataset.intro==="run"&&!location.hash){history.scrollRestoration="manual";scrollTo(0,0)}}catch(e){}`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

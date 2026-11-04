@@ -48,7 +48,7 @@ export function Intro() {
     timers.current = [];
     document.documentElement.dataset.intro = "done";
     setPhase((p) => (p === "exit" || p === "gone" ? p : "exit"));
-    timers.current.push(window.setTimeout(() => setPhase("gone"), 900));
+    timers.current.push(window.setTimeout(() => setPhase("gone"), 1900));
   }, []);
 
   useEffect(() => {
@@ -74,6 +74,23 @@ export function Intro() {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [phase, finish]);
+
+  // Halaman tidak boleh digulir selama intro: roda mouse, sentuhan, dan tombol gulir ditahan.
+  useEffect(() => {
+    if (!home || phase === "gone" || phase === "exit" || document.documentElement.dataset.intro !== "run") return;
+    if (!window.location.hash) window.scrollTo(0, 0);
+    const block = (e: Event) => e.preventDefault();
+    const keys = new Set([" ", "PageUp", "PageDown", "ArrowUp", "ArrowDown", "Home", "End"]);
+    const onKey = (e: KeyboardEvent) => keys.has(e.key) && e.preventDefault();
+    window.addEventListener("wheel", block, { passive: false });
+    window.addEventListener("touchmove", block, { passive: false });
+    window.addEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("wheel", block);
+      window.removeEventListener("touchmove", block);
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [home, phase]);
 
   if (!home || phase === "gone") return null;
 

@@ -13,6 +13,13 @@ export function SmoothScroll() {
 
     const lenis = new Lenis({ autoRaf: true, lerp: 0.09 });
 
+    // Selama intro berjalan, Lenis dihentikan; overflow: hidden saja tidak cukup karena Lenis menggulung lewat scrollTo.
+    const root = document.documentElement;
+    const syncIntro = () => (root.dataset.intro === "run" ? lenis.stop() : lenis.start());
+    syncIntro();
+    const introWatch = new MutationObserver(syncIntro);
+    introWatch.observe(root, { attributes: true, attributeFilter: ["data-intro"] });
+
     const goTo = (hash: string) => {
       const target = hash ? document.querySelector<HTMLElement>(hash) : null;
       if (!target) return false;
@@ -44,6 +51,7 @@ export function SmoothScroll() {
     return () => {
       document.removeEventListener("click", onClick);
       window.removeEventListener(SCROLL_EVENT, onCustom);
+      introWatch.disconnect();
       lenis.destroy();
     };
   }, []);
