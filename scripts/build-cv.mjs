@@ -41,7 +41,7 @@ mkdirSync(join(root, "public", "cv"), { recursive: true });
 for (const { lang, source, output } of builds) {
   // Nomor telepon dibuang dari CV publik; versi lengkap bisa diunggah sendiri ke Google Drive.
   const markdown = readFileSync(source, "utf8").replace(/\+62[\d\s-]+\|\s*/g, "");
-  const html = `<!doctype html><html lang="${lang}"><head><meta charset="utf-8"><title>Radja Admiral - CV</title><style>${style}</style></head><body>${marked.parse(markdown, { breaks: true })}</body></html>`;
+  const html = `<!doctype html><html lang="${lang}"><head><meta charset="utf-8"><title>Radja Admiral - Curriculum Vitae</title><style>${style}</style></head><body>${marked.parse(markdown, { breaks: true })}</body></html>`;
   const work = mkdtempSync(join(tmpdir(), "cv-build-"));
   const htmlPath = join(work, "cv.html");
   writeFileSync(htmlPath, html);

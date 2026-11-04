@@ -55,7 +55,10 @@ export function Experience() {
         </SectionTitle>
         <p className="mt-3 flex items-center gap-3 text-muted">
           <span className="line-badge">RA</span>
-          <T id="Ikuti kereta untuk melewati tiap stasiun, dari yang terbaru ke yang terlama." en="Ride the train past each station, from the most recent to the oldest." />
+          <T
+            id="Perjalanan saya sejauh ini, dari kelas bootcamp dan magang di perusahaan ritel hingga memimpin divisi di kampus. Naik keretanya dan singgahi tiap stasiun."
+            en="My journey so far, from a bootcamp classroom and a retail tech internship to leading a campus division. Hop on the train and stop at every station."
+          />
         </p>
 
         <div ref={list} className="krl relative mt-10">

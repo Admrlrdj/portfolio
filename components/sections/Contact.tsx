@@ -15,8 +15,8 @@ export function Contact() {
         </SectionTitle>
         <p className="mt-3 max-w-[36rem]">
           <T
-            id="Email adalah cara tercepat untuk menghubungi saya. Saya membalas dalam bahasa Indonesia atau Inggris."
-            en="Email is the fastest way to reach me. I reply in English or Indonesian."
+            id="Punya proyek, lowongan magang, atau sekadar ingin berdiskusi soal web? Kirim email kapan saja, saya senang membalas dalam bahasa Indonesia maupun Inggris."
+            en="Have a project, an internship opening, or just want to talk about the web? Send me an email anytime. I am happy to reply in English or Indonesian."
           />
         </p>
         <Reveal className="mt-8 max-w-[40rem]">

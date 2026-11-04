@@ -114,9 +114,9 @@ export function Header() {
           })}
         </nav>
         <span aria-hidden="true" className="dock-sep" />
-        <Link href="/cv" className="dock-item dock-cv" aria-label={lang === "en" ? "View CV" : "Lihat CV"}>
+        <Link href="/cv" className="dock-item dock-cv" aria-label={lang === "en" ? "View Curriculum Vitae" : "Lihat Curriculum Vitae"}>
           <IsoIcon kind="paper" className="dock-glyph h-7 w-7" />
-          <span className="dock-tip">{lang === "en" ? "View CV" : "Lihat CV"}</span>
+          <span className="dock-tip">{lang === "en" ? "View Curriculum Vitae" : "Lihat Curriculum Vitae"}</span>
         </Link>
         <ThemeToggle className="dock-item" />
         <LangToggle />

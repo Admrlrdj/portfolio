@@ -13,8 +13,8 @@ export function WorkroomSection() {
         </h2>
         <p className="mt-3 max-w-[40rem] text-muted">
           <T
-            id="Setiap benda di kamar ini membuka satu bagian situs. Pilih benda atau tombol di sampingnya."
-            en="Each object in this room opens a section of the site. Pick an object or the button next to it."
+            id="Selamat datang di ruang kerja saya. Monitor, kalender, rak buku, sampai ponsel di meja masing-masing menyimpan satu bagian cerita. Klik salah satunya untuk mulai menjelajah."
+            en="Welcome to my workspace. The monitor, the calendar, the bookshelf, even the phone on the desk each hold a part of my story. Click one to start exploring."
           />
         </p>
         <Reveal className="mt-8">

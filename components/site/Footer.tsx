@@ -173,12 +173,12 @@ export function Footer() {
               </li>
               <li>
                 <a href="/cv" className="foot-link">
-                  {en ? "View CV" : "Lihat CV"} <Glyph kind="cv" className="h-4 w-4" />
+                  {en ? "View Curriculum Vitae" : "Lihat Curriculum Vitae"} <Glyph kind="cv" className="h-4 w-4" />
                 </a>
               </li>
               <li>
                 <a href={cv.file[lang]} download={cv.fileName[lang]} className="foot-link">
-                  {en ? "Download CV (PDF, English)" : "Unduh CV (PDF, Indonesia)"} <Glyph kind="download" className="h-4 w-4" />
+                  {en ? "Download Curriculum Vitae (PDF, English)" : "Unduh Curriculum Vitae (PDF, Indonesia)"} <Glyph kind="download" className="h-4 w-4" />
                 </a>
               </li>
             </ul>

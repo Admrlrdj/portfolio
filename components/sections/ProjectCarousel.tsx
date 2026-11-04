@@ -17,8 +17,8 @@ export function ProjectCarousel() {
         </SectionTitle>
         <p className="mt-3 max-w-[40rem] text-muted">
           <T
-            id="Dari yang paling baru rampung. Arahkan kursor ke kartu untuk mengintip situsnya, lalu geser untuk proyek lainnya."
-            en="Newest finished first. Hover a card to peek at the live site, then swipe for more projects."
+            id="Hal-hal yang sudah saya bangun, dari aplikasi pendeteksi kantuk berbasis AI hingga situs advokasi lingkungan. Arahkan kursor ke kartu untuk melihat sekilas tampilannya."
+            en="Things I have built, from an AI-powered drowsiness detector to an environmental advocacy site. Hover over a card for a quick look at the live site."
           />
         </p>
         <Reveal className="mt-8">

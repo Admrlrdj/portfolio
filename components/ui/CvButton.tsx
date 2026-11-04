@@ -8,7 +8,7 @@ export function CvButton() {
     <Magnetic>
       <Link href="/cv" className="btn-live btn-live-accent">
         <Glyph kind="cv" />
-        <T id="Lihat CV" en="View CV" />
+        <T id="Lihat Curriculum Vitae" en="View Curriculum Vitae" />
       </Link>
     </Magnetic>
   );
