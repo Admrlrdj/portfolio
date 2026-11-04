@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { cv, nav, profile } from "@/content/profile";
 import { siInstagram } from "simple-icons";
+import { Skyline } from "@/components/fx/Skyline";
 import { Glyph } from "@/components/ui/Glyph";
 import { TechIcon } from "@/components/ui/TechIcon";
 import { scrollToHash } from "@/lib/scroll";
@@ -99,7 +100,8 @@ export function Footer() {
 
   return (
     <footer ref={root} data-in={inView} className="foot">
-      <div className="wrap">
+      <Skyline />
+      <div className="wrap relative z-[1]">
         <div className="foot-top">
           <p className="mono foot-hello">
             <span className="foot-live" aria-hidden="true" />
