@@ -8,8 +8,8 @@ import { marked } from "marked";
 const root = resolve(import.meta.dirname, "..");
 // Dua versi: Inggris (berkas utama) dan Indonesia.
 const builds = [
-  { lang: "en", source: join(root, "content", "cv", "CV_Radja_Admiral_ATS.md"), output: join(root, "public", "cv", "Radja-Admiral-CV.pdf") },
-  { lang: "id", source: join(root, "content", "cv", "CV_Radja_Admiral_ATS_ID.md"), output: join(root, "public", "cv", "Radja-Admiral-CV-ID.pdf") },
+  { lang: "en", source: join(root, "content", "cv", "CV_Radja_Admiral_ATS.md"), output: join(root, "public", "cv", "CV_Radja_Admiral_ATS_EN.pdf") },
+  { lang: "id", source: join(root, "content", "cv", "CV_Radja_Admiral_ATS_ID.md"), output: join(root, "public", "cv", "CV_Radja_Admiral_ATS_ID.pdf") },
 ];
 
 const chromeCandidates = [
