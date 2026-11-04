@@ -66,6 +66,10 @@ Rekayasa Perangkat Lunak | Jul 2021 – Mei 2024 | Nilai akhir: 87
 
 ## PENGALAMAN
 
+**Ketua Divisi Humas** — Kabinet Infantry, Informatics Management SV IPB | Des 2025 – Nov 2026
+- Memimpin divisi hubungan masyarakat Kabinet Infantry dan menyampaikan informasi seputar Infantry kepada mahasiswa Teknologi Rekayasa Perangkat Lunak
+- Menjadi penghubung antara pengurus kabinet dan mahasiswa agar informasi kegiatan sampai dengan jelas
+
 **Koordinator Lomba Pengembangan Perangkat Lunak** — IT Festival, IPB University | Feb 2025 – Agu 2025
 - Mengoordinasikan lomba pengembangan perangkat lunak dengan 50+ peserta dari beberapa universitas, mengelola jadwal, juri, mentor dan logistik
 

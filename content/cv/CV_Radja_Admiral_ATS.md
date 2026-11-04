@@ -66,6 +66,10 @@ Software Engineering (Rekayasa Perangkat Lunak) | Jul 2021 – May 2024 | Final 
 
 ## EXPERIENCE
 
+**Head of Public Relations** — Infantry Cabinet, Informatics Management SV IPB | Dec 2025 – Nov 2026
+- Led the public relations division of the Infantry cabinet, sharing information about Infantry with Software Engineering Technology students
+- Acted as the link between the cabinet board and students so that activity information reached them clearly
+
 **Software Development Competition Coordinator** — IT Festival, IPB University | Feb 2025 – Aug 2025
 - Coordinated a software development competition with 50+ participants from multiple universities, managing timeline, judges, mentors and logistics
 

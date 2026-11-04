@@ -26,10 +26,10 @@ if (!chrome) {
 }
 
 const style = `
-  @page { size: A4; margin: 14mm 15mm; }
-  body { font: 10pt/1.4 Arial, Helvetica, sans-serif; color: #111; }
+  @page { size: A4; margin: 11mm 14mm; }
+  body { font: 9.5pt/1.36 Arial, Helvetica, sans-serif; color: #111; }
   h1 { font-size: 20pt; margin: 0 0 2pt; letter-spacing: 0.5pt; }
-  h2 { font-size: 11pt; margin: 12pt 0 4pt; padding-bottom: 2pt; border-bottom: 1pt solid #111; text-transform: uppercase; }
+  h2 { font-size: 10.5pt; margin: 9pt 0 3pt; padding-bottom: 2pt; border-bottom: 1pt solid #111; text-transform: uppercase; }
   p { margin: 2pt 0; }
   ul { margin: 2pt 0 4pt 14pt; padding: 0; }
   li { margin: 1pt 0; }

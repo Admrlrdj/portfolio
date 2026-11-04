@@ -9,6 +9,21 @@ export type Experience = {
 
 export const experience: Experience[] = [
   {
+    period: bi("Des 2025 – Nov 2026", "Dec 2025 – Nov 2026"),
+    role: bi("Ketua Divisi Humas", "Head of Public Relations"),
+    org: "Kabinet Infantry, Informatics Management SV IPB",
+    points: [
+      bi(
+        "Memimpin divisi hubungan masyarakat di Kabinet Infantry dan menyampaikan informasi seputar Infantry kepada mahasiswa Teknologi Rekayasa Perangkat Lunak.",
+        "Led the public relations division of the Infantry cabinet and shared information about Infantry with Software Engineering Technology students.",
+      ),
+      bi(
+        "Menjadi penghubung antara pengurus kabinet dan mahasiswa agar informasi kegiatan sampai dengan jelas.",
+        "Acted as the link between the cabinet board and students so that activity information reached them clearly.",
+      ),
+    ],
+  },
+  {
     period: bi("Feb 2025 – Agu 2025", "Feb 2025 – Aug 2025"),
     role: bi("Koordinator Lomba Pengembangan Perangkat Lunak", "Software Development Competition Coordinator"),
     org: "IT Festival, IPB University",
