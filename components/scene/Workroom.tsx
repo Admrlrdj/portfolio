@@ -170,11 +170,12 @@ export function Workroom() {
 
       <div
         ref={box}
-        onPointerMove={tilt}
+        onPointerMoveCapture={tilt}
         onPointerLeave={untilt}
-        onPointerDown={press}
-        onPointerUp={release}
-        onPointerCancel={cancelHold}
+        // Capture: runtime Spline menghentikan propagasi pointer dari canvas, jadi handler bubbling tidak pernah terpanggil.
+        onPointerDownCapture={press}
+        onPointerUpCapture={release}
+        onPointerCancelCapture={cancelHold}
         data-hold={hold?.ready ? "true" : "false"}
         data-lit={active ?? "none"}
         data-lenis-prevent={active ? "" : undefined}
@@ -198,6 +199,29 @@ export function Workroom() {
             <i key={i} style={{ "--i": i } as React.CSSProperties} />
           ))}
         </span>
+        <p aria-hidden="true" className="scene-hud mono">
+          <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M4 20l1.2-4.6L16.5 4.1a2 2 0 0 1 2.8 0l.6.6a2 2 0 0 1 0 2.8L8.6 18.8z" />
+            <path d="M14.5 6l3.5 3.5" />
+          </svg>
+          <TV v={bi("Klik benda di ruangan · ponsel = kontak", "Click objects in the room · phone = contact")} />
+        </p>
+        {active && !hold && (
+          <span aria-hidden="true" className="scene-note" key={active}>
+            <svg viewBox="0 0 80 50" className="scene-note-arrow" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M74 44C60 40 40 34 22 14" />
+              <path d="M20 26L21 12L33 15" />
+            </svg>
+            <span className="scene-note-text">
+              <strong>
+                <TV v={hotspots.find((h) => h.id === active)!.hint} />
+              </strong>
+              <span>
+                → <TV v={hotspots.find((h) => h.id === active)!.label} />
+              </span>
+            </span>
+          </span>
+        )}
         {hold && (
           <span aria-hidden="true" className="hold-ring" data-ready={hold.ready} style={{ left: hold.x, top: hold.y }}>
             <svg viewBox="0 0 56 56">

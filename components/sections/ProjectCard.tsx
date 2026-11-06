@@ -7,6 +7,7 @@ import { ProjectCover } from "@/components/ui/ProjectCover";
 import { TechChip } from "@/components/ui/TechIcon";
 import { RobotError } from "./RobotError";
 import { TV } from "@/components/i18n/T";
+import { bi } from "@/lib/i18n";
 
 const OPEN_DELAY_MS = 160;
 
@@ -50,6 +51,13 @@ export function ProjectCard({ project }: { project: Project }) {
     >
       <div ref={cover} className="pv-cover relative aspect-[16/10] overflow-hidden rounded-t-md border-b border-line">
         <ProjectCover slug={project.slug} className="h-full w-full rounded-none border-0" />
+        <span aria-hidden="true" className="card-note mono">
+          <svg viewBox="0 0 36 22" className="card-note-arrow" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M2 4C14 4 22 9 30 18" />
+            <path d="M22 18L31 19L29 10" />
+          </svg>
+          <TV v={bi("studi kasus", "case study")} />
+        </span>
         {open && (
           <div className="pv-live" aria-hidden="true">
             <div className="pv-bar">

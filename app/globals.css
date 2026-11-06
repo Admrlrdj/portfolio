@@ -34,6 +34,7 @@
   --font-serif: var(--font-instrument), Georgia, serif;
   --font-sans: var(--font-public), system-ui, sans-serif;
   --font-mono: var(--font-plex), ui-monospace, monospace;
+  --font-jakarta: var(--font-jakarta), system-ui, sans-serif;
   --radius-sm: 4px;
   --radius-md: 8px;
 }
@@ -504,7 +505,7 @@ html[data-intro="skip"] .intro, html[data-intro="done"] .intro[data-phase="build
 .foot-up:hover { background: var(--fa); border-color: var(--fa); color: var(--ink); translate: 0 -3px; }
 .foot-up:hover svg { translate: 0 -3px; }
 
-.foot-word { display: flex; justify-content: center; flex-wrap: nowrap; margin-block: clamp(1.5rem, 4vw, 3rem); font-family: var(--font-serif); font-size: clamp(2.6rem, 10.5vw, 9.5rem); line-height: 1.02; letter-spacing: -0.02em; user-select: none; }
+.foot-word { display: flex; justify-content: center; flex-wrap: nowrap; margin-block: clamp(1.5rem, 4vw, 3rem); font-family: var(--font-jakarta), sans-serif; font-weight: 700; font-size: clamp(2.3rem, 9.2vw, 8.25rem); line-height: 1.02; letter-spacing: -0.03em; user-select: none; }
 .foot-gap { width: 0.28em; }
 .fw-char { display: inline-block; }
 .fw-char > span { display: block; translate: 0 60%; opacity: 0; transition: translate 0.8s cubic-bezier(0.22, 1, 0.36, 1) var(--d), color 0.15s; will-change: transform; }
@@ -526,7 +527,7 @@ html[data-intro="skip"] .intro, html[data-intro="done"] .intro[data-phase="build
 .foot-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.3rem; }
 .foot-stack li { padding: 0.15rem 0.6rem; border: 1px solid color-mix(in srgb, var(--paper) 35%, transparent); border-radius: 999px; transition: background 0.2s, color 0.2s, border-color 0.2s, translate 0.2s; }
 .foot-stack li:hover { background: var(--fa); border-color: var(--fa); color: var(--ink); translate: 0 -2px; }
-.foot-base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 2rem; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid color-mix(in srgb, var(--paper) 22%, transparent); opacity: 0.7; }
+.foot-base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 2rem; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid color-mix(in srgb, var(--paper) 22%, transparent); }
 .foot-base kbd { padding: 0 0.4rem; border: 1px solid currentColor; border-radius: 3px; }
 @media (prefers-reduced-motion: reduce) { .foot-live { animation: none; } .fw-char > span { translate: 0 0 !important; } }
 
@@ -768,18 +769,156 @@ html[data-lang="en"] .card[data-hint-en]::after { content: attr(data-hint-en); }
 @media (max-width: 767px) { .bubble { position: relative; bottom: auto; right: auto; display: block; max-width: 100%; min-height: 4.6rem; margin: 0 0 0.9rem auto; font-size: 0.85rem; } }
 @media (prefers-reduced-motion: reduce) { .bubble-in { animation: none; } }
 
-/* Footer: skyline kota 2D. Footer selalu kebalikan tema, jadi tema terang = kota malam, tema gelap = kota siang. */
-.foot { --sky-far: #161c25; --sky-near: #1e2632; --sky-win: #29323f; --sky-lit: #ffc970; --sky-orb: #ece8df; --sky-star: #ece8df; }
-:root[data-theme="dark"] .foot { --sky-far: #dfd9cc; --sky-near: #d1cabb; --sky-win: #c2bba9; --sky-lit: #b9c6cf; --sky-orb: #ff7a55; --sky-star: transparent; }
-.sky { position: absolute; left: 0; right: 0; bottom: 0; z-index: 0; width: 100%; height: clamp(220px, 30vw, 400px); pointer-events: none; }
+/* Footer: City Light Sketch Theme penuh dari atas footer (area nama Radja Admiral) hingga bawah.
+   Mengikuti palet utama situs: kertas (--paper), tinta (--ink), dan aksen tunggal (--fa / #ff7a55 / #c23e1a). */
+.foot {
+  --sky-far: color-mix(in srgb, var(--ink) 88%, var(--paper));
+  --sky-near: color-mix(in srgb, var(--ink) 95%, var(--paper));
+  --sky-stroke: color-mix(in srgb, var(--paper) 42%, transparent);
+  --sky-stroke-far: color-mix(in srgb, var(--paper) 20%, transparent);
+  --sky-hatch: color-mix(in srgb, var(--paper) 14%, transparent);
+  --sky-guide: color-mix(in srgb, var(--paper) 8%, transparent);
+  --sky-lit: var(--paper);
+  --sky-accent: var(--fa);
+}
+:root[data-theme="dark"] .foot {
+  --fa: #c23e1a;
+  --sky-far: color-mix(in srgb, var(--ink) 90%, var(--paper));
+  --sky-near: color-mix(in srgb, var(--ink) 96%, var(--paper));
+  --sky-stroke: color-mix(in srgb, var(--paper) 38%, transparent);
+  --sky-stroke-far: color-mix(in srgb, var(--paper) 18%, transparent);
+  --sky-hatch: color-mix(in srgb, var(--paper) 13%, transparent);
+  --sky-guide: color-mix(in srgb, var(--paper) 8%, transparent);
+  --sky-lit: var(--paper);
+  --sky-accent: #c23e1a;
+}
+.sky { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; pointer-events: none; }
+.sky-guide { fill: none; stroke: var(--sky-guide); stroke-width: 0.8; stroke-dasharray: 5 7; }
+.sky-clouds { fill: none; stroke: var(--sky-stroke-far); stroke-width: 1.05; stroke-linecap: round; stroke-linejoin: round; }
+.sky-orb-core { fill: color-mix(in srgb, var(--sky-accent) 22%, var(--ink)); }
+.sky-orb-sketch { fill: none; stroke: var(--sky-accent); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 10px var(--sky-accent)); }
+.sky-orb-hatch { fill: none; stroke: var(--sky-stroke); stroke-width: 0.9; stroke-linecap: round; }
+.sky-orb-ring { fill: none; stroke: var(--sky-stroke); stroke-width: 0.9; }
+.sky-orb-dash { stroke-dasharray: 4 6; stroke: var(--sky-accent); opacity: 0.65; }
+.sky-compass { fill: none; stroke: var(--sky-stroke-far); stroke-width: 0.85; stroke-dasharray: 3 4; }
+.sky-stars path { fill: none; stroke-linecap: round; animation: sky-twinkle 4.5s ease-in-out infinite; }
+.sky-star-paper { stroke: var(--sky-lit); stroke-width: 1.15; opacity: 0.55; }
+.sky-star-accent { stroke: var(--sky-accent); stroke-width: 1.35; opacity: 0.85; filter: drop-shadow(0 0 4px var(--sky-accent)); }
 .sky-far { fill: var(--sky-far); }
+.sky-far-hatch { fill: none; stroke: var(--sky-guide); stroke-width: 0.75; stroke-dasharray: 6 4; }
+.sky-far-stroke { fill: none; stroke: var(--sky-stroke-far); stroke-width: 1.05; stroke-linecap: round; stroke-linejoin: round; }
 .sky-near { fill: var(--sky-near); }
-.sky-win rect { fill: var(--sky-win); }
-.sky-win rect.on { fill: var(--sky-lit); opacity: 0.6; }
-.sky-orb { fill: var(--sky-orb); opacity: 0.9; filter: drop-shadow(0 0 18px var(--sky-orb)); }
-:root[data-theme="dark"] .sky-orb { opacity: 0.55; }
-.sky-stars circle { fill: var(--sky-star); opacity: 0.6; animation: sky-twinkle 5s ease-in-out infinite; }
-.sky-win rect.blink { animation: sky-blink 9s steps(1) infinite; }
+.sky-hatch { fill: none; stroke: var(--sky-hatch); stroke-width: 0.9; stroke-linecap: round; }
+.sky-detail { fill: none; stroke: var(--sky-hatch); stroke-width: 0.85; stroke-dasharray: 12 5; }
+.sky-sketch { fill: none; stroke: var(--sky-stroke); stroke-width: 1.35; stroke-linecap: round; stroke-linejoin: round; }
+.sky-win-frame { fill: none; stroke: var(--sky-hatch); stroke-width: 0.75; stroke-linecap: round; }
+.sky-win-lit .lit-accent { fill: color-mix(in srgb, var(--sky-accent) 28%, transparent); filter: drop-shadow(0 0 5px var(--sky-accent)); }
+.sky-win-lit .lit-paper { fill: color-mix(in srgb, var(--sky-lit) 22%, transparent); filter: drop-shadow(0 0 4px var(--sky-lit)); }
+.sky-win-scribble-accent { fill: none; stroke: var(--sky-accent); stroke-width: 1.15; stroke-linecap: round; stroke-linejoin: round; opacity: 0.92; }
+.sky-win-scribble-paper { fill: none; stroke: var(--sky-lit); stroke-width: 1.05; stroke-linecap: round; stroke-linejoin: round; opacity: 0.78; }
+.sky-street { fill: none; stroke: var(--sky-stroke); stroke-width: 1.25; stroke-linecap: round; }
+.sky-trails { fill: none; stroke: var(--sky-accent); stroke-width: 1.8; stroke-linecap: round; stroke-dasharray: 24 14 8 18; opacity: 0.82; filter: drop-shadow(0 0 6px var(--sky-accent)); }
+.sky-reflect { fill: none; stroke: var(--sky-accent); stroke-width: 0.95; stroke-linecap: round; opacity: 0.38; }
+.sky-lamps .lamp-accent { color: var(--sky-accent); animation: sky-pulse 5s ease-in-out infinite; }
+.sky-lamps .lamp-paper { color: var(--sky-lit); animation: sky-pulse 6s ease-in-out infinite; }
+.sky-lamps .lamp-halo { fill: currentColor; opacity: 0.16; }
+.sky-lamps .lamp-rays { fill: none; stroke: currentColor; stroke-width: 1.1; stroke-linecap: round; opacity: 0.85; }
+.sky-lamps .lamp-core { fill: currentColor; filter: drop-shadow(0 0 5px currentColor); }
+.sky-win-lit rect.blink { animation: sky-blink 9s steps(1) infinite; }
 @keyframes sky-twinkle { 50% { opacity: 0.15; } }
-@keyframes sky-blink { 40% { opacity: 0.6; } 41%, 70% { opacity: 0; } 71% { opacity: 0.6; } }
-@media (prefers-reduced-motion: reduce) { .sky-stars circle, .sky-win rect.blink { animation: none; } }
+@keyframes sky-pulse { 50% { opacity: 0.45; } }
+@keyframes sky-blink { 40% { opacity: 0.9; } 41%, 70% { opacity: 0.08; } 71% { opacity: 0.9; } }
+@media (prefers-reduced-motion: reduce) { .sky-stars path, .sky-lamps g, .sky-win-lit rect.blink { animation: none; } }
+
+/* ===== Latar sketsa (hero sampai sebelum footer): kertas grafik, grid titik, grain, doodle pensil di pinggir bagian. ===== */
+main#konten { position: relative; isolation: isolate; }
+main#konten::before {
+  content: ""; position: absolute; inset: 0; z-index: -2; pointer-events: none;
+  background-image:
+    radial-gradient(color-mix(in srgb, var(--ink) 16%, transparent) 1px, transparent 1.3px),
+    linear-gradient(color-mix(in srgb, var(--ink) 5%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--ink) 5%, transparent) 1px, transparent 1px),
+    linear-gradient(color-mix(in srgb, var(--ink) 2.5%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--ink) 2.5%, transparent) 1px, transparent 1px);
+  background-size: 24px 24px, 120px 120px, 120px 120px, 24px 24px, 24px 24px;
+  background-position: 12px 12px, -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+  /* Memudar di ujung bawah agar menyatu dengan footer. */
+  -webkit-mask-image: linear-gradient(to bottom, #000 0, #000 calc(100% - 18rem), transparent);
+  mask-image: linear-gradient(to bottom, #000 0, #000 calc(100% - 18rem), transparent);
+}
+main#konten::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0.35; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.28 0 0 0 0 0.24 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+:root[data-theme="dark"] main#konten::after { mix-blend-mode: screen; opacity: 0.25; }
+/* Doodle pensil: digambar lewat mask agar warnanya ikut tinta tema. Bergantian kiri/kanan per bagian. */
+.page::before {
+  content: ""; position: absolute; z-index: -1; pointer-events: none; bottom: 2.5rem; left: clamp(0.5rem, 2vw, 2rem);
+  width: clamp(6rem, 12vw, 10rem); aspect-ratio: 1; background: var(--ink); opacity: 0.12;
+  -webkit-mask: var(--doodle) no-repeat center / contain; mask: var(--doodle) no-repeat center / contain;
+  --doodle: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 88 L50 66 L88 88 L50 110Z' transform='translate(0 -30)'/%3E%3Cpath d='M12 58 V30 M50 36 V8 M88 58 V30 M12 30 L50 8 L88 30 L50 52Z M50 52 V80'/%3E%3Cpath d='M6 92 H96 M6 89 V95 M96 89 V95' stroke-dasharray='2 3'/%3E%3C/svg%3E");
+}
+.page:nth-of-type(even)::before {
+  left: auto; right: clamp(2rem, 4vw, 3.5rem);
+  --doodle: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='50' cy='50' r='30'/%3E%3Ccircle cx='50' cy='50' r='36' stroke-dasharray='3 4'/%3E%3Cpath d='M50 6 V94 M6 50 H94 M22 22 L78 78 M78 22 L22 78' stroke-dasharray='1 5'/%3E%3Cpath d='M50 50 L70 30 M66 30 H70 V34'/%3E%3C/svg%3E");
+}
+.page:nth-of-type(3n)::before {
+  --doodle: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 80 C30 60 40 85 60 62 S85 40 92 20'/%3E%3Cpath d='M84 22 L92 20 L90 28'/%3E%3Cpath d='M10 20 H40 M10 26 H32 M10 32 H36' stroke-dasharray='2 2'/%3E%3Cpath d='M58 82 l6 -14 l6 14 M60 77 h8'/%3E%3C/svg%3E");
+}
+@media (max-width: 767px) { .page::before { opacity: 0.08; } }
+
+/* ===== Scene 3D: petunjuk HUD, anotasi panah tangan, kursor di atas benda. ===== */
+.scene-box:not([data-lit="none"]) canvas { cursor: var(--cur-link, pointer) !important; }
+.scene-hud {
+  position: absolute; left: 0.75rem; top: 0.75rem; z-index: 3; display: inline-flex; align-items: center; gap: 0.45rem; margin: 0;
+  padding: 0.3rem 0.7rem; border: 1.5px dashed var(--ink); border-radius: 999px; background: color-mix(in srgb, var(--paper) 88%, transparent);
+  color: var(--ink); font-size: 0.75rem; pointer-events: none; rotate: -1.5deg; box-shadow: 2px 2px 0 var(--ink);
+}
+.scene-hud svg { color: var(--accent); }
+.scene-note {
+  position: absolute; z-index: 4; left: var(--sx, 50%); top: var(--sy, 50%); display: flex; align-items: flex-start; gap: 0.1rem;
+  translate: 0.4rem calc(-100% - 0.2rem); pointer-events: none; color: var(--accent);
+  animation: note-in 0.2s cubic-bezier(0.2, 0, 0, 1) both;
+}
+.scene-note-arrow { width: 3.4rem; height: 2.1rem; margin-top: 1.1rem; scale: -1 1; }
+.scene-note-arrow path:first-child { stroke-dasharray: 90; animation: draw-arrow 0.35s ease-out both; --len: 90; }
+.scene-note-text {
+  display: grid; gap: 0.05rem; padding: 0.35rem 0.65rem; border: 1.5px solid var(--ink); border-radius: 0.6rem 0.6rem 0.6rem 0.15rem;
+  background: var(--paper); color: var(--ink); box-shadow: 3px 3px 0 var(--ink); font-size: 0.8125rem; line-height: 1.3; white-space: nowrap; rotate: -2deg;
+}
+.scene-note-text strong { font-weight: 600; }
+.scene-note-text span { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); }
+@keyframes note-in { from { opacity: 0; } }
+@keyframes draw-arrow { from { stroke-dashoffset: 90; } to { stroke-dashoffset: 0; } }
+@media (hover: none) { .scene-note { display: none; } }
+@media (prefers-reduced-motion: reduce) { .scene-note, .scene-note-arrow path { animation: none; } }
+
+/* ===== Footer: keterbacaan di atas ilustrasi kota. Kota padat di bawah, area teks diberi scrim. ===== */
+.foot .sky {
+  -webkit-mask-image: linear-gradient(to bottom, rgb(0 0 0 / 0.28) 0%, rgb(0 0 0 / 0.35) 45%, rgb(0 0 0 / 0.85) 75%, #000 100%);
+  mask-image: linear-gradient(to bottom, rgb(0 0 0 / 0.28) 0%, rgb(0 0 0 / 0.35) 45%, rgb(0 0 0 / 0.85) 75%, #000 100%);
+}
+.foot::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: linear-gradient(to bottom, color-mix(in srgb, var(--ink) 70%, transparent) 0%, color-mix(in srgb, var(--ink) 55%, transparent) 55%, transparent 85%);
+}
+.foot-grid > div { padding: 1rem 1.1rem; margin: -1rem -1.1rem; border-radius: var(--radius-md); background: color-mix(in srgb, var(--ink) 55%, transparent); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.foot-hello { opacity: 0.92; }
+.foot-h { opacity: 0.78; }
+.foot-info dt { opacity: 0.78; }
+.foot-sub { opacity: 0.85; }
+.foot-base { position: relative; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.5rem 2rem; margin-top: 2rem; padding: 0.65rem 1rem; border-top: 1px solid color-mix(in srgb, var(--paper) 22%, transparent); border-radius: var(--radius-md); background: color-mix(in srgb, var(--ink) 74%, transparent); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); opacity: 0.94; }
+.foot-word { text-shadow: 0 2px 24px color-mix(in srgb, var(--ink) 80%, transparent); }
+
+/* ===== Kartu proyek: anotasi panah sketsa saat hover. ===== */
+.card-note {
+  position: absolute; right: 0.65rem; top: 0.55rem; z-index: 3; display: inline-flex; align-items: center; gap: 0.25rem;
+  padding: 0.15rem 0.5rem; border: 1.5px dashed var(--ink); border-radius: 999px; background: color-mix(in srgb, var(--paper) 92%, transparent);
+  color: var(--ink); font-size: 0.7rem; rotate: 2deg; opacity: 0; translate: 0 -4px; pointer-events: none;
+  transition: opacity 0.2s cubic-bezier(0.2, 0, 0, 1), translate 0.2s cubic-bezier(0.2, 0, 0, 1);
+}
+.card-note-arrow { width: 1.35rem; height: 0.85rem; color: var(--accent); }
+@media (hover: hover) {
+  .pv-card:hover .card-note { opacity: 1; translate: 0 0; }
+}
+.pv-card[data-open="true"] .card-note { z-index: 5; top: 1.85rem; }

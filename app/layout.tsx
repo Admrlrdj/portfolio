@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Instrument_Serif, Public_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Instrument_Serif, Public_Sans, IBM_Plex_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import { Intro } from "@/components/fx/Intro";
 import { SideProgress } from "@/components/fx/SideProgress";
 import { SmoothScroll } from "@/components/fx/SmoothScroll";
@@ -14,6 +14,7 @@ import "./globals.css";
 const serif = Instrument_Serif({ subsets: ["latin"], weight: "400", variable: "--font-instrument", display: "swap" });
 const sans = Public_Sans({ subsets: ["latin"], weight: ["400", "600"], variable: "--font-public", display: "swap" });
 const mono = IBM_Plex_Mono({ subsets: ["latin"], weight: "400", variable: "--font-plex", display: "swap" });
+const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], weight: "700", variable: "--font-jakarta", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -41,7 +42,7 @@ const themeScript = `try{var t=localStorage.getItem("theme");if(t==="dark"||t===
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="id" className={`${serif.variable} ${sans.variable} ${mono.variable}`} suppressHydrationWarning>
+    <html lang="id" className={`${serif.variable} ${sans.variable} ${mono.variable} ${jakarta.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript + langScript }} />
       </head>
