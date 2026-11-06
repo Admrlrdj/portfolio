@@ -14,7 +14,7 @@ function Frame({ children }: { children: ReactNode }) {
   );
 }
 
-function LoopaCover() {
+function EyvaCover() {
   return (
     <Frame>
       <circle cx="104" cy="96" r="46" fill="none" stroke={ink} strokeWidth="2.5" />
@@ -167,7 +167,7 @@ function WarkopCover() {
 }
 
 const covers = {
-  loopa: LoopaCover,
+  eyva: EyvaCover,
   siagars: SiagaCover,
   "save-raja-ampat": RajaAmpatCover,
   "lms-hyper-optimum": LmsCover,

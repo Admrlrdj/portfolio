@@ -37,11 +37,12 @@ Rekayasa Perangkat Lunak | Jul 2021 – Mei 2024 | Nilai akhir: 87
 
 ## PROYEK
 
-**Loopa — Smart Study Assistant** | Back-end Developer | FastAPI, Python, YOLO11, Supabase, Next.js | Okt 2026 – Des 2026
+**Eyva (sebelumnya Loopa) — Smart Study Companion** | Back-end Developer | FastAPI, Python, YOLO11, Supabase, Next.js | Okt 2026 – Des 2026
 - Membangun backend aplikasi belajar Pomodoro yang memakai webcam untuk menandai tanda kantuk dan menyarankan jeda; backend di Railway, frontend di Vercel
 - Melakukan fine-tuning YOLO11n pada 3.841 gambar dengan 6 kelas: mAP50 0,959 pada 195 gambar uji statis, sekitar 52 ms per frame di CPU
 - Menemukan dan menghapus kebocoran data latih/uji (109 dari 192 gambar uji punya salinan augmentasi di data latih) dengan membagi ulang data per kelompok gambar sumber
-- Membuat API sesi dengan analisis temporal (kedipan, menguap, mata tertutup), state machine peringatan dua tahap, autentikasi Supabase, dan tip istirahat dari LLM dengan fallback berbasis aturan
+- Membuat API sesi dengan analisis temporal (kedipan, menguap, mata tertutup), state machine peringatan dua tahap, login wajib (email atau Google lewat Supabase, token diverifikasi di backend), reset password, dan insight belajar dari LLM dengan fallback berbasis aturan
+- Demo: eyva-smart-study.vercel.app | Kode: github.com/eyva-comvis/eyva-backend
 
 **SiagaRS — Platform Pencarian Rumah Sakit dan Pendukung Keputusan** | Project Manager dan Front-end Developer | Next.js, Go, MongoDB, OpenAPI | Okt 2026 – Nov 2026
 - Memimpin tim 3 orang membangun prototipe untuk lomba Web In Action, MIA 2026 (UPNVJ): aplikasi web yang membantu keluarga pasien mencari rumah sakit berdasarkan fasilitas, melihat sumber dan usia setiap data, serta membandingkan 2–3 rumah sakit

@@ -31,23 +31,22 @@ const phone = bi("Tampilan di ponsel", "Mobile view");
 
 export const projects: Project[] = [
   {
-    slug: "loopa",
-    preview: "/docs/loopa/preview.webp",
+    slug: "eyva",
+    preview: "/docs/eyva/preview.webp",
     docs: [
-      { src: "/docs/loopa/1.webp", caption: bi("Beranda mode tamu, dibuka lewat Continue without an account", "Guest home, opened via Continue without an account") },
-      { src: "/docs/loopa/2.webp", caption: bi("Riwayat sesi belajar", "Study session history") },
-      { src: "/docs/loopa/3.webp", caption: bi("Statistik menit belajar per hari", "Study minutes per day") },
-      { src: "/docs/loopa/4.webp", caption: bi("Pengaturan sesi fokus sebelum kalibrasi kamera", "Focus session setup before camera calibration") },
-      { src: "/docs/loopa/mobile.webp", caption: phone, mobile: true },
+      { src: "/docs/eyva/1.webp", caption: bi("Halaman pembuka: login dengan Google atau email", "Landing page: sign in with Google or email") },
+      { src: "/docs/eyva/2.webp", caption: bi("Dokumentasi API backend (Swagger): autentikasi, reset password, dan profil", "Backend API docs (Swagger): authentication, password reset, and profile") },
+      { src: "/docs/eyva/3.webp", caption: bi("Kebijakan privasi: data apa yang diproses dan untuk apa", "Privacy policy: what data is processed and why") },
+      { src: "/docs/eyva/mobile.webp", caption: phone, mobile: true },
     ],
-    title: "Loopa — Smart Study Assistant",
+    title: "Eyva: Smart Study Companion",
     period: bi("Okt – Des 2026", "Oct – Dec 2026"),
     role: bi("Back-end developer", "Back-end developer"),
     summary: bi(
-      "Aplikasi belajar dengan timer Pomodoro yang memakai webcam untuk mendeteksi tanda kantuk dan menyarankan jeda.",
-      "A Pomodoro study app that uses the webcam to detect signs of drowsiness and suggest breaks.",
+      "Aplikasi belajar dengan timer Pomodoro yang memakai webcam untuk mendeteksi tanda kantuk dan menyarankan jeda. Sebelumnya bernama Loopa.",
+      "A Pomodoro study app that uses the webcam to detect signs of drowsiness and suggest breaks. Formerly called Loopa.",
     ),
-    stack: ["Next.js", "FastAPI", "Python", "YOLO11", "Supabase"],
+    stack: ["Next.js", "FastAPI", "Python", "YOLO11", "Supabase", "Railway"],
     highlights: [
       bi(
         "YOLO11n di-fine-tune pada 3.841 gambar, 6 kelas: mAP50 0,959 pada 195 gambar uji statis (validasi webcam masih berjalan), sekitar 52 ms per frame di CPU.",
@@ -58,23 +57,29 @@ export const projects: Project[] = [
         "Found data leakage: 109 of 192 test images had augmented copies in the training set. Re-split the data by source-image group.",
       ),
       bi(
-        "API sesi dengan analisis temporal (kedipan, menguap, mata tertutup), state machine peringatan dua tahap, autentikasi Supabase, dan tip istirahat dari LLM dengan fallback berbasis aturan.",
-        "Session API with temporal analysis (blinks, yawns, closed eyes), a two-stage alert state machine, Supabase auth, and LLM break tips with a rule-based fallback.",
+        "API sesi dengan analisis temporal (kedipan, menguap, mata tertutup), state machine peringatan dua tahap, login wajib (email atau Google lewat Supabase, token diverifikasi di backend), reset password, dan profil pengguna.",
+        "Session API with temporal analysis (blinks, yawns, closed eyes), a two-stage alert state machine, mandatory sign-in (email or Google via Supabase, tokens verified on the backend), password reset, and user profiles.",
+      ),
+      bi(
+        "Insight belajar dari LLM lewat OpenRouter dengan model cadangan dan fallback berbasis aturan. Yang dikirim hanya metrik angka sesi, bukan gambar webcam.",
+        "Study insights from an LLM via OpenRouter, with a backup model and a rule-based fallback. Only numeric session metrics are sent, never webcam images.",
       ),
     ],
     links: [
-      { label: demo, href: "https://loopa-smart-study.vercel.app" },
-      { label: repo, href: "https://github.com/Admrlrdj/loopa" },
+      { label: demo, href: "https://eyva-smart-study.vercel.app/dashboard/home" },
+      { label: bi("Repo backend", "Backend repo"), href: "https://github.com/eyva-comvis/eyva-backend" },
+      { label: bi("Repo frontend", "Frontend repo"), href: "https://github.com/eyva-comvis/eyva-frontend" },
+      { label: bi("API", "API"), href: "https://eyva-backend-production.up.railway.app/docs" },
     ],
     featured: true,
     caseStudy: {
       problem: bi(
-        "Orang yang belajar dengan teknik Pomodoro sering tidak sadar saat mulai mengantuk. Loopa membaca webcam, menandai tanda kantuk, dan menyarankan jeda.",
-        "People studying with the Pomodoro technique often don't notice when they start getting drowsy. Loopa reads the webcam, flags signs of drowsiness, and suggests a break.",
+        "Orang yang belajar dengan teknik Pomodoro sering tidak sadar saat mulai mengantuk. Eyva membaca webcam, menandai tanda kantuk, dan menyarankan jeda.",
+        "People studying with the Pomodoro technique often don't notice when they start getting drowsy. Eyva reads the webcam, flags signs of drowsiness, and suggests a break.",
       ),
       role: bi(
-        "Back-end developer. Saya membangun API sesi (FastAPI di Railway), autentikasi Supabase, dan melatih serta mengevaluasi model deteksinya.",
-        "Back-end developer. I built the session API (FastAPI on Railway) and Supabase auth, and trained and evaluated the detection model.",
+        "Back-end developer. Saya membangun API sesi dan autentikasi (FastAPI di Railway, Supabase), melatih serta mengevaluasi model deteksinya, dan menghubungkan login serta insight AI ke frontend.",
+        "Back-end developer. I built the session and auth API (FastAPI on Railway, Supabase), trained and evaluated the detection model, and wired sign-in and AI insights into the frontend.",
       ),
       decisions: [
         {
@@ -105,11 +110,21 @@ export const projects: Project[] = [
             "Break suggestions come from an LLM. If the LLM is unavailable, the app falls back to rule-based tips so the session keeps running.",
           ),
         },
+        {
+          title: bi("Berganti nama, lalu backend dipisah dan login diwajibkan", "Renamed, then the backend split out and sign-in made mandatory"),
+          body: bi(
+            "Saat berganti nama dari Loopa menjadi Eyva, backend dan model saya pisahkan dari monorepo ke repo sendiri. Semua endpoint sesi kini mewajibkan login, dan token Supabase diverifikasi di backend sehingga riwayat dan statistik hanya terlihat oleh pemiliknya. Sesi yang sedang berjalan dimuat ulang dari Supabase setelah redeploy.",
+            "When Loopa was renamed Eyva, I moved the backend and model out of the monorepo into their own repo. Every session endpoint now requires sign-in, and Supabase tokens are verified on the backend so history and statistics are visible only to their owner. Active sessions are reloaded from Supabase after a redeploy.",
+          ),
+        },
       ],
       results: [
         bi("mAP50 0,959 pada 195 gambar uji statis setelah split ulang.", "mAP50 0.959 on 195 static test images after the re-split."),
         bi("Sekitar 52 ms per frame di CPU.", "About 52 ms per frame on CPU."),
-        bi("Berjalan di produksi: frontend di Vercel, backend di Railway.", "Running in production: frontend on Vercel, backend on Railway."),
+        bi(
+          "Berjalan di produksi: frontend di Vercel, backend di Railway dengan model YOLO dan penyimpanan Supabase aktif.",
+          "Running in production: frontend on Vercel, backend on Railway with the YOLO model and Supabase storage active.",
+        ),
       ],
       unfinished: [
         bi(
@@ -117,8 +132,12 @@ export const projects: Project[] = [
           "Live webcam validation is still in progress. The mAP50 figure comes from static test images and does not yet reflect real webcam conditions.",
         ),
         bi(
-          "Login Google lewat Supabase belum diuji dengan akun sungguhan (per catatan proyek 30 Okt 2026).",
-          "Google sign-in through Supabase has not been tested with a real account yet (per project notes, 30 Oct 2026).",
+          "Login Google lewat Supabase belum diuji dengan akun sungguhan (per catatan proyek, Nov 2026).",
+          "Google sign-in through Supabase has not been tested with a real account yet (per project notes, Nov 2026).",
+        ),
+        bi(
+          "Model dilatih di CPU dengan 35% data dan 12 epoch. Pelatihan penuh di GPU belum dilakukan.",
+          "The model was trained on CPU with 35% of the data for 12 epochs. Full GPU training has not been done yet.",
         ),
       ],
     },

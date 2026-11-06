@@ -33,7 +33,7 @@ Penyimpangan dari usulan spec: aksen terang `#E5532D` hanya 3,4:1 di atas kertas
 
 - Ikon bagian (monitor, kalender, rak buku, bingkai, ponsel, kertas CV) adalah benda isometrik buatan sendiri dari helper `components/scene/iso.tsx`, sama dengan bahasa visual ruang kerja. Alasannya: satu identitas yang berasal dari cerita situs, bukan set ikon bawaan yang tampak sama di semua situs.
 - Logo teknologi memakai paket `simple-icons` karena logo merek adalah ikon yang relevan (React, Next.js, Python, dan seterusnya). Satu warna (`currentColor`), tanpa warna merek, supaya palet tetap satu aksen. Teknologi tanpa ikon tampil sebagai teks.
-- Setiap proyek punya sampul SVG buatan sendiri yang menggambarkan konsepnya (deteksi mata tertutup di Loopa, pin rumah sakit dan kartu bandingkan di SiagaRS, pembanding before/after di Save Raja Ampat, empat tingkat hierarki di LMS, carousel di EduPortal, gelas kopi di Warkop). Tanpa angka karangan; teks di dalam sampul hanya nama kelas atau istilah yang memang ada di proyeknya.
+- Setiap proyek punya sampul SVG buatan sendiri yang menggambarkan konsepnya (deteksi mata tertutup di Eyva, dulu Loopa, pin rumah sakit dan kartu bandingkan di SiagaRS, pembanding before/after di Save Raja Ampat, empat tingkat hierarki di LMS, carousel di EduPortal, gelas kopi di Warkop). Tanpa angka karangan; teks di dalam sampul hanya nama kelas atau istilah yang memang ada di proyeknya.
 
 ## Gerak (MOTION 3)
 
@@ -54,7 +54,7 @@ Penyimpangan dari usulan spec: aksen terang `#E5532D` hanya 3,4:1 di atas kertas
 - Footer terbalik warna: nama besar bergelombang mengikuti kursor, jam WIB Bogor, lama di situs, tumpukan teknologi, tautan, tombol kembali ke atas dengan persen scroll.
 - Kamar Radja: tombol samping menyala (isi aksen, ikon bergoyang) saat benda di scene disorot; tahan di scene memunculkan cincin pengisi dan scene mendekat, lepas di atas benda membuka bagiannya (ketukan singkat juga, tetapi tidak setelah menyeret). Selama kursor di atas benda, roda mouse tidak menggulung halaman. Ada sorot cahaya mengikuti kursor dan debu halus. Scene Spline sendiri tidak diubah.
 - Kartu proyek: kursor di atas kartu mengganti sampul dengan tangkapan halaman utama situsnya yang bergulir pelan (`public/docs/<slug>/preview.webp`). Proyek tanpa tangkapan (LMS Hyper Optimum) menampilkan robot 404 yang matanya mengikuti kursor (`RobotError`).
-- Halaman proyek punya bagian Dokumentasi: tangkapan layar situs yang berjalan (desktop dan ponsel), diambil dengan Chrome headless lewat DevTools Protocol. Loopa dibuka lewat Continue without an account.
+- Halaman proyek punya bagian Dokumentasi: tangkapan layar situs yang berjalan (desktop dan ponsel), diambil dengan Chrome headless lewat DevTools Protocol. Eyva hanya menampilkan halaman publik (pembuka, dokumentasi API, kebijakan privasi, login) karena dashboard-nya mewajibkan login.
 - Keahlian: satu baris per kategori, masing-masing berjalan sendiri (arah bergantian), berhenti saat di-hover.
 - Kontak: editor `kontak.ts` hanya-baca yang mengetik sendiri, kursor pindah dengan klik atau panah, petunjuk saat hover, tombol Jalankan membuka terminal kecil.
 - Hero memakai model 3D karakter buatan sendiri dengan CSS 3D (`Avatar3D`), bukan foto dan bukan Three.js: kepala mengikuti mouse, badan bisa diputar dengan menyeret. Ini karakter blok bergaya, bukan pindai wajah.
