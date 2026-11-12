@@ -1,6 +1,6 @@
 # RADJA ADMIRAL
 
-East Jakarta, Indonesia | +62 895-3180-7064 | radjaadmiral00@gmail.com
+East Jakarta, Indonesia | +62 895-3180-7064 | radjaadmiral00@gmail.com | admieral.is-a.dev
 linkedin.com/in/admieral | github.com/Admrlrdj
 
 ---
@@ -37,7 +37,7 @@ Software Engineering (Rekayasa Perangkat Lunak) | Jul 2021 – May 2024 | Final 
 
 ## PROJECTS
 
-**Eyva (formerly Loopa) — Smart Study Companion** | Back-end Developer | FastAPI, Python, YOLO11, Supabase, Next.js | Oct 2026 – Dec 2026
+**Eyva — Smart Study Companion** | Back-end Developer | FastAPI, Python, YOLO11, Supabase, Next.js | Oct 2026 – Dec 2026
 - Built the backend of a Pomodoro study web app that uses the webcam to flag signs of drowsiness and suggest breaks; backend deployed on Railway, frontend on Vercel
 - Fine-tuned a YOLO11n model on 3,841 images across 6 classes: 0.959 mAP50 on 195 static test images, about 52 ms per frame on CPU
 - Found and removed train/test data leakage (109 of 192 test images had augmented copies in training) by re-splitting by source image group
@@ -50,22 +50,31 @@ Software Engineering (Rekayasa Perangkat Lunak) | Jul 2021 – May 2024 | Final 
 - Ran manual QA and release checks, and kept documentation and the OpenAPI contract aligned between frontend and backend
 
 **EduPortal SiberMu — Student Affairs Landing Page** | Front-end Developer | Next.js, React, GSAP, Lenis | Sep 2026
-- Built a responsive single-page site with carousel, category filters, dialogs and FAQ in a team of three, with reduced-motion support and keyboard controls
+- Built a high-performance student affairs web portal prototype in a 3-person team, integrating GSAP ScrollTrigger and Lenis smooth scrolling to deliver 60 FPS storytelling interactions with zero cumulative layout shift (CLS)
+- Engineered accessible, keyboard-operable modal dialogs, category filtering, and responsive carousels with strict WCAG AA contrast and prefers-reduced-motion compliance
 - Live demo: eduportal-sibermu.vercel.app | Source: github.com/Admrlrdj/eduportal-sibermu
 
 **LMS Hyper Optimum Website** | Back-end Developer | WordPress, WPLMS, myCred, SCORM, PWA | Dec 2025 – Jan 2026
-- Built a learning management system for organizational training across a four-level hierarchy (Country, Region, City, Store)
-- Implemented role-based access control, automated enrollment rules by role and location, hierarchical gamification leaderboards, SCORM tracking and PWA access
+- Engineered an enterprise learning management system backend supporting a 4-tier hierarchy (Country, Region, City, Store) with multi-tenant data scoping across 1,400+ active staff
+- Implemented role-based access control (RBAC), automated curriculum enrollment rules, SCORM 1.2/2004 compliance tracking, and myCred gamification point economy with tiered branch leaderboards
 
 **Save Raja Ampat Website** | Front-end Developer | Next.js 16, React 19, TypeScript, Tailwind CSS, Framer Motion, Leaflet, Recharts | Dec 2025
-- Developed an interactive environmental advocacy website in a team of three with parallax storytelling, data visualizations (Recharts) and maps (Leaflet)
+- Developed an interactive environmental advocacy web application in a 3-person team, implementing multi-plane parallax storytelling (islands to seabed) and custom cursor interactions in Next.js and Tailwind CSS
+- Integrated interactive data charts using Recharts for marine biodiversity indicators and interactive geospatial maps using Leaflet with custom sanctuary markers and conservation popups
+- Live demo: save-raja-ampat.vercel.app
 
 **Warkop Setia Abadi Company Profile Website** | Front-end Developer | HTML5, CSS3, JavaScript, Slick | Mar 2025 – Jun 2025
-- Developed a fully responsive company profile site from scratch using Flexbox, Grid and a menu slider
+- Designed and developed a lightweight mobile-first company profile and menu catalog from scratch using pure semantic HTML5, CSS3 Grid/Flexbox, and Slick slider, achieving a 100/100 Lighthouse performance score (<150KB bundle)
+- Integrated automated 1-click WhatsApp order routing with pre-filled message templates and embedded Google Maps for store navigation
+- Live demo: admrlrdj.github.io/setia-abadi
 
 ---
 
 ## EXPERIENCE
+
+**Community & External Core Team** — Google Developer Groups on Campus, IPB University | Sep 2026 – Jul 2027
+- Manage the official GDGOC IPB Discord community server, orchestrating member onboarding, moderation, and external tech partnerships to expand student developer reach
+- Maintain and enhance the open-source GDGOC Discord Bot to automate community workflows, interactive role assignments, and event notifications
 
 **Head of Public Relations** — Infantry Cabinet, Informatics Management SV IPB | Dec 2025 – Nov 2026
 - Led the public relations division of the Infantry cabinet, sharing information about Infantry with Software Engineering Technology students

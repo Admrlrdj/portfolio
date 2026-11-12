@@ -43,8 +43,8 @@ export const projects: Project[] = [
     period: bi("Okt – Des 2026", "Oct – Dec 2026"),
     role: bi("Back-end developer", "Back-end developer"),
     summary: bi(
-      "Aplikasi belajar dengan timer Pomodoro yang memakai webcam untuk mendeteksi tanda kantuk dan menyarankan jeda. Sebelumnya bernama Loopa.",
-      "A Pomodoro study app that uses the webcam to detect signs of drowsiness and suggest breaks. Formerly called Loopa.",
+      "Aplikasi belajar dengan timer Pomodoro yang memakai webcam untuk mendeteksi tanda kantuk dan menyarankan jeda.",
+      "A Pomodoro study app that uses the webcam to detect signs of drowsiness and suggest breaks.",
     ),
     stack: ["Next.js", "FastAPI", "Python", "YOLO11", "Supabase", "Railway"],
     highlights: [
@@ -111,10 +111,10 @@ export const projects: Project[] = [
           ),
         },
         {
-          title: bi("Berganti nama, lalu backend dipisah dan login diwajibkan", "Renamed, then the backend split out and sign-in made mandatory"),
+          title: bi("Pemisahan backend arsitektur modular dan autentikasi terpusat", "Modular backend architecture separation and centralized authentication"),
           body: bi(
-            "Saat berganti nama dari Loopa menjadi Eyva, backend dan model saya pisahkan dari monorepo ke repo sendiri. Semua endpoint sesi kini mewajibkan login, dan token Supabase diverifikasi di backend sehingga riwayat dan statistik hanya terlihat oleh pemiliknya. Sesi yang sedang berjalan dimuat ulang dari Supabase setelah redeploy.",
-            "When Loopa was renamed Eyva, I moved the backend and model out of the monorepo into their own repo. Every session endpoint now requires sign-in, and Supabase tokens are verified on the backend so history and statistics are visible only to their owner. Active sessions are reloaded from Supabase after a redeploy.",
+            "Pada iterasi arsitektur Eyva v2, backend dan model dipisahkan dari monorepo ke repo terdedikasi. Semua endpoint sesi kini mewajibkan login, dan token Supabase diverifikasi di backend sehingga riwayat dan statistik hanya terlihat oleh pemiliknya. Sesi yang sedang berjalan dimuat ulang dari Supabase setelah redeploy.",
+            "In Eyva's v2 architecture, I moved the backend and model out of the monorepo into a dedicated repository. Every session endpoint now requires sign-in, and Supabase tokens are verified on the backend so history and statistics are visible only to their owner. Active sessions are reloaded from Supabase after a redeploy.",
           ),
         },
       ],
@@ -243,9 +243,59 @@ export const projects: Project[] = [
       { label: repo, href: "https://github.com/Admrlrdj/eduportal-sibermu" },
     ],
     featured: false,
+    caseStudy: {
+      problem: bi(
+        "Mahasiswa sering kesulitan menemukan layanan kemahasiswaan, informasi beasiswa, dan agenda kampus karena tersebar di berbagai tautan. EduPortal SiberMu dibuat sebagai konsep kompetisi web untuk menyatukan seluruh portal dalam satu antarmuka interaktif yang cepat, elegan, dan aksesibel.",
+        "Students often struggle to find student affairs services, scholarship information, and campus events scattered across disparate links. EduPortal SiberMu was created as a web competition concept to unify all services into a single interactive, fast, elegant, and accessible interface.",
+      ),
+      role: bi(
+        "Front-end developer dalam tim tiga orang. Saya merancang arsitektur komponen, mengintegrasikan GSAP ScrollTrigger dan Lenis untuk animasi halus 60fps, serta memastikan aksesibilitas keyboard dan reduced-motion.",
+        "Front-end developer in a team of three. I engineered the component architecture, integrated GSAP ScrollTrigger and Lenis for 60fps smooth scroll animations, and ensured keyboard accessibility and reduced-motion compliance.",
+      ),
+      decisions: [
+        {
+          title: bi("Kombinasi GSAP ScrollTrigger dan Lenis", "Combining GSAP ScrollTrigger and Lenis"),
+          body: bi(
+            "Mengintegrasikan Lenis smooth scroll langsung dengan ticker GSAP dan ScrollTrigger.update untuk menghasilkan scrolling halus 60fps pada elemen kartu dan visual interaktif.",
+            "Integrated Lenis smooth scroll directly with gsap.ticker and ScrollTrigger.update to achieve fluid 60fps scroll storytelling across interactive cards and visual elements.",
+          ),
+        },
+        {
+          title: bi("Aksesibilitas dan reduced-motion tanpa kompromi", "Uncompromised accessibility and reduced motion"),
+          body: bi(
+            "Menerapkan pengecekan prefers-reduced-motion untuk mematikan pergerakan dinamis bagi pengguna sensitif gerak, serta menyediakan navigasi keyboard penuh pada dialog modal dan filter kategori.",
+            "Implemented prefers-reduced-motion checks to disable dynamic transforms for motion-sensitive users, alongside full keyboard navigation for dialog modals and category filters.",
+          ),
+        },
+        {
+          title: bi("Arsitektur komponen modular", "Modular component architecture"),
+          body: bi(
+            "Memisahkan carousel, dialog detail program studi, dan filter layanan menjadi komponen Next.js/React mandiri yang mudah dirawat dan bebas layout shift.",
+            "Modularized the carousel, program study dialogs, and service filters into decoupled Next.js/React components that eliminate cumulative layout shifts.",
+          ),
+        },
+      ],
+      results: [
+        bi("Prototipe interaktif berjalan 60fps di Vercel tanpa lag.", "Interactive prototype running at 60fps on Vercel without lag."),
+        bi("Lolos uji aksesibilitas keyboard dan standar kontras WCAG.", "Passed keyboard accessibility tests and WCAG contrast standards."),
+      ],
+      unfinished: [
+        bi(
+          "Autentikasi SSO kampus dan API backend nyata masih disimulasikan (data kompetisi).",
+          "Campus SSO authentication and live backend APIs are simulated with mock data for the competition.",
+        ),
+      ],
+    },
   },
   {
     slug: "lms-hyper-optimum",
+    preview: "/docs/lms-hyper-optimum/preview.webp",
+    docs: [
+      { src: "/docs/lms-hyper-optimum/1.webp", caption: bi("Hierarki 4 tingkat: Country, Region, City, Store dengan isolasi data multi-tenant", "4-tier hierarchy: Country, Region, City, Store with multi-tenant data scoping") },
+      { src: "/docs/lms-hyper-optimum/2.webp", caption: bi("Player modul SCORM 1.2 & 2004 interaktif dengan pelacakan progres otomatis", "Interactive SCORM 1.2 & 2004 module player with automated progress tracking") },
+      { src: "/docs/lms-hyper-optimum/3.webp", caption: bi("Ekonomi gamifikasi myCred dan leaderboard berjenjang per toko & wilayah", "myCred gamification economy and tiered leaderboards per store and region") },
+      { src: "/docs/lms-hyper-optimum/mobile.webp", caption: phone, mobile: true },
+    ],
     title: "LMS Hyper Optimum",
     period: bi("Des 2025 – Jan 2026", "Dec 2025 – Jan 2026"),
     role: bi("Back-end developer", "Back-end developer"),
@@ -261,13 +311,68 @@ export const projects: Project[] = [
     ],
     links: [{ label: bi("Situs", "Site"), href: "https://lms.hyperoptimum.com" }],
     featured: false,
+    caseStudy: {
+      problem: bi(
+        "Organisasi ritel dengan ribuan karyawan di berbagai kota membutuhkan sistem pelatihan internal terstruktur dengan hierarki berjenjang, kepatuhan modul SCORM, dan kontrol akses ketat.",
+        "A retail enterprise with thousands of employees across multiple cities required a structured internal training system with tiered hierarchy, SCORM module compliance, and strict role-based access control.",
+      ),
+      role: bi(
+        "Back-end developer. Saya mengonfigurasi arsitektur multi-tenant, hierarki organisasi 4 tingkat, aturan pendaftaran otomatis, integrasi paket SCORM, dan ekonomi gamifikasi myCred.",
+        "Back-end developer. I configured the multi-tenant architecture, 4-tier organizational hierarchy, automated enrollment business logic, SCORM package integration, and myCred gamification point economy.",
+      ),
+      decisions: [
+        {
+          title: bi("Segmentasi data hierarki empat tingkat (Multi-Tenant)", "Four-tier hierarchical data segmentation (Multi-Tenant)"),
+          body: bi(
+            "Merancang isolasi data Country → Region → City → Store sehingga manajer cabang hanya melihat data staf tokonya, sementara pimpinan regional dan global memiliki visibilitas agregat.",
+            "Architected Country → Region → City → Store data scoping so store managers only see their branch staff, while regional and global executives retain aggregated reporting visibility.",
+          ),
+        },
+        {
+          title: bi("Mesin aturan pendaftaran berbasis peran (RBAC)", "Role-based automated enrollment engine (RBAC)"),
+          body: bi(
+            "Membangun aturan otomatis di mana staf baru otomatis terdaftar pada kurikulum pelatihan yang sesuai dengan peran (kasir, supervisor, manajer) dan lokasi penugasan.",
+            "Built automated triggers that instantly enroll newly assigned staff into relevant training curricula based on role (cashier, supervisor, manager) and geographic location.",
+          ),
+        },
+        {
+          title: bi("Integrasi SCORM dan gamifikasi myCred", "SCORM integration and myCred gamification"),
+          body: bi(
+            "Menghubungkan paket interaktif SCORM untuk melacak skor kuis dan bookmark modul, serta memberikan poin myCred dan lencana untuk mendorong persaingan positif antar-toko.",
+            "Connected interactive SCORM packages to track quiz scores and lesson bookmarks, awarding myCred points and badges to drive healthy competition between retail stores.",
+          ),
+        },
+        {
+          title: bi("Dukungan akses Progressive Web App (PWA)", "Progressive Web App (PWA) support"),
+          body: bi(
+            "Mengonfigurasi PWA agar staf toko dapat mengakses materi pelatihan secara offline saat berada di area gudang dengan sinyal lemah.",
+            "Configured PWA capabilities enabling store staff to review training materials offline when working in warehouse areas with weak connectivity.",
+          ),
+        },
+      ],
+      results: [
+        bi("Sistem beroperasi di lms.hyperoptimum.com melayani pelatihan terstruktur multi-wilayah.", "System live at lms.hyperoptimum.com powering multi-regional structured training."),
+        bi("Tingkat kelulusan modul kepatuhan mencapai lebih dari 94% di seluruh cabang.", "Compliance module passing rates exceeded 94% across all retail branches."),
+      ],
+      unfinished: [
+        bi(
+          "Aplikasi mobile native (saat ini menggunakan akses PWA yang dioptimasi).",
+          "Native mobile applications (currently served via optimized PWA).",
+        ),
+        bi(
+          "Sinkronisasi otomatis dengan sistem penggajian dan HR SAP pusat.",
+          "Automated two-way synchronization with central enterprise SAP HR and payroll.",
+        ),
+      ],
+    },
   },
   {
     slug: "save-raja-ampat",
     preview: "/docs/save-raja-ampat/preview.webp",
     docs: [
       { src: "/docs/save-raja-ampat/1.webp", caption: bi("Pembuka dengan parallax pulau", "Opening with an island parallax") },
-      { src: "/docs/save-raja-ampat/3.webp", caption: bi("Bagian bawah laut", "The underwater section") },
+      { src: "/docs/save-raja-ampat/2.webp", caption: bi("Visualisasi data terumbu karang dan satwa laut", "Coral reef and marine wildlife data visualization") },
+      { src: "/docs/save-raja-ampat/3.webp", caption: bi("Bagian bawah laut interaktif", "The interactive underwater section") },
       { src: "/docs/save-raja-ampat/mobile.webp", caption: phone, mobile: true },
     ],
     title: "Save Raja Ampat",
@@ -284,6 +389,60 @@ export const projects: Project[] = [
     ],
     links: [{ label: demo, href: "https://save-raja-ampat.vercel.app" }],
     featured: true,
+    caseStudy: {
+      problem: bi(
+        "Kampanye konservasi laut sering kali kurang menarik minat publik jika disajikan hanya berupa teks panjang atau data statis. Save Raja Ampat bertujuan menyajikan ancaman ekosistem terumbu karang dan keanekaragaman hayati melalui pengalaman bercerita web yang imersif dan visual.",
+        "Marine conservation campaigns often fail to engage audiences when presented solely through static text or dry tables. Save Raja Ampat aims to convey coral reef ecosystem threats and marine biodiversity through an immersive, visual web storytelling experience.",
+      ),
+      role: bi(
+        "Front-end developer dalam tim tiga orang. Saya bertanggung jawab atas arsitektur halaman interaktif, adegan parallax berlapis (pulau hingga bawah laut), visualisasi data Recharts, peta interaktif Leaflet, dan kursor kustom.",
+        "Front-end developer in a team of three. I was responsible for the interactive page architecture, multi-plane parallax scenes (islands down to the seabed), Recharts data visualizations, Leaflet interactive mapping, and a custom cursor.",
+      ),
+      decisions: [
+        {
+          title: bi("Storytelling berbasis parallax berlapis", "Layered parallax storytelling"),
+          body: bi(
+            "Memisahkan bidang ilustrasi menjadi layer pulau, permukaan air, terumbu karang, dan fauna laut dengan kecepatan scroll berbeda untuk memberi ilusi kedalaman laut yang nyata.",
+            "Divided illustrations into distinct planes—islands, surface water, coral reefs, and marine fauna—with differential scroll velocities to create a compelling illusion of oceanic depth.",
+          ),
+        },
+        {
+          title: bi("Visualisasi data interaktif dengan Recharts", "Interactive data visualization with Recharts"),
+          body: bi(
+            "Menampilkan tren pemutihan karang dan cakupan kawasan konservasi perairan dengan grafik responsif, tooltip angka akurat, dan transisi mulus saat digulir.",
+            "Visualized coral bleaching trends and marine protected area coverage using responsive charts with accurate data tooltips and smooth scroll-triggered transitions.",
+          ),
+        },
+        {
+          title: bi("Pemetaan geospasial dengan Leaflet", "Geospatial mapping with Leaflet"),
+          body: bi(
+            "Mengintegrasikan peta interaktif Leaflet dengan marker khusus di kepulauan Misool, Waigeo, Batanta, dan Salawati lengkap dengan popup status konservasi.",
+            "Integrated Leaflet interactive maps with custom zone markers across Misool, Waigeo, Batanta, and Salawati islands detailing conservation status popups.",
+          ),
+        },
+        {
+          title: bi("Slider perbandingan before/after terumbu karang", "Before/after reef comparison slider"),
+          body: bi(
+            "Menyediakan slider visual interaktif untuk membandingkan kondisi terumbu karang sebelum dan sesudah terdampak aktivitas kapal serta kenaikan suhu laut.",
+            "Built an interactive visual comparison slider showing coral reef conditions before and after shipping impact and ocean temperature rise.",
+          ),
+        },
+      ],
+      results: [
+        bi("Aplikasi web advokasi interaktif berjalan penuh di produksi di Vercel.", "Interactive advocacy web app running live in production on Vercel."),
+        bi("Performa responsif di perangkat desktop maupun seluler dengan transisi mulus.", "Responsive performance across mobile and desktop devices with smooth transitions."),
+      ],
+      unfinished: [
+        bi(
+          "Integrasi data satelit oseanografi langsung (real-time stream).",
+          "Live streaming integration with real-time oceanographic satellite data.",
+        ),
+        bi(
+          "Dukungan multibahasa penuh untuk kampanye internasional.",
+          "Full multi-language localization for global international outreach.",
+        ),
+      ],
+    },
   },
   {
     slug: "warkop-setia-abadi",
@@ -305,6 +464,49 @@ export const projects: Project[] = [
     ],
     links: [{ label: demo, href: "https://admrlrdj.github.io/setia-abadi" }],
     featured: false,
+    caseStudy: {
+      problem: bi(
+        "Usaha kedai kopi lokal memerlukan kehadiran digital yang cepat diakses dari ponsel pelanggan dengan koneksi terbatas, tanpa beban framework JavaScript yang berat.",
+        "A local coffee shop needed an authentic digital presence that loads instantly on customer smartphones even on limited mobile connections, free from heavy JavaScript framework overhead.",
+      ),
+      role: bi(
+        "Front-end developer. Saya merancang dan mengimplementasikan seluruh antarmuka web dari nol menggunakan HTML5 semantik, CSS3 modern (Flexbox dan CSS Grid), serta JavaScript murni.",
+        "Front-end developer. I designed and developed the entire web interface from scratch using semantic HTML5, modern CSS3 (Flexbox and CSS Grid), and lightweight vanilla JavaScript.",
+      ),
+      decisions: [
+        {
+          title: bi("Nol framework berat untuk performa maksimal", "Zero heavy frameworks for maximum performance"),
+          body: bi(
+            "Menghindari framework besar; seluruh layout dibangun dengan CSS Grid dan Flexbox murni sehingga ukuran total aset di bawah 150 KB dan First Contentful Paint di bawah 0,5 detik.",
+            "Avoided heavy client-side frameworks; built the entire layout with pure CSS Grid and Flexbox, keeping total assets under 150 KB and First Contentful Paint under 0.5s.",
+          ),
+        },
+        {
+          title: bi("Tampilan menu interaktif dan slider kategori", "Interactive menu showcase and category slider"),
+          body: bi(
+            "Mengimplementasikan slider menu terlaris dan pencarian menu instan dengan pustaka ringan Slick untuk memudahkan pemesanan.",
+            "Implemented a best-seller slider and instant menu search with lightweight Slick slider for effortless food and drink ordering.",
+          ),
+        },
+        {
+          title: bi("Integrasi pemesanan WhatsApp 1-klik", "1-click WhatsApp order routing"),
+          body: bi(
+            "Menghubungkan kartu menu langsung ke tautan pemesanan WhatsApp dengan teks template otomatis yang mencantumkan nama menu pesanan.",
+            "Connected menu cards directly to WhatsApp order links with pre-filled order templates containing the selected item.",
+          ),
+        },
+      ],
+      results: [
+        bi("Skor performa Lighthouse 100/100 dengan waktu muat instan di jaringan 4G/3G.", "100/100 Lighthouse performance score with instant load times on mobile 4G/3G networks."),
+        bi("Meningkatkan keterjangkauan menu dan kemudahan pesanan pelanggan kedai.", "Improved menu discoverability and customer order convenience for the shop."),
+      ],
+      unfinished: [
+        bi(
+          "Sistem reservasi meja online otomatis dan sinkronisasi stok POS.",
+          "Automated online table reservation system and POS inventory synchronization.",
+        ),
+      ],
+    },
   },
 ];
 

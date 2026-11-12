@@ -9,6 +9,21 @@ export type Experience = {
 
 export const experience: Experience[] = [
   {
+    period: bi("Sep 2026 – Jul 2027", "Sep 2026 – Jul 2027"),
+    role: bi("Community & External Core Team", "Community & External Core Team"),
+    org: "Google Developer Groups on Campus, IPB University",
+    points: [
+      bi(
+        "Mengelola server Discord resmi GDGOC IPB sebagai pusat komunitas developer kampus, mengatur onboarding anggota, serta menangani komunikasi dan kemitraan eksternal.",
+        "Managing the official GDGOC IPB Discord server as the university tech community hub, overseeing member onboarding, and driving external communications and partnerships.",
+      ),
+      bi(
+        "Memelihara dan mengembangkan Bot Discord GDGOC untuk automasi server, manajemen role interaktif, dan pengumuman kegiatan secara otomatis.",
+        "Maintaining and developing the GDGOC Discord Bot for server automation, interactive role management, and scheduled event announcements.",
+      ),
+    ],
+  },
+  {
     period: bi("Des 2025 – Nov 2026", "Dec 2025 – Nov 2026"),
     role: bi("Ketua Divisi Humas", "Head of Public Relations"),
     org: "Kabinet Infantry, Informatics Management SV IPB",

@@ -1,6 +1,6 @@
 # RADJA ADMIRAL
 
-Jakarta Timur, Indonesia | +62 895-3180-7064 | radjaadmiral00@gmail.com
+Jakarta Timur, Indonesia | +62 895-3180-7064 | radjaadmiral00@gmail.com | admieral.is-a.dev
 linkedin.com/in/admieral | github.com/Admrlrdj
 
 ---
@@ -37,7 +37,7 @@ Rekayasa Perangkat Lunak | Jul 2021 – Mei 2024 | Nilai akhir: 87
 
 ## PROYEK
 
-**Eyva (sebelumnya Loopa) — Smart Study Companion** | Back-end Developer | FastAPI, Python, YOLO11, Supabase, Next.js | Okt 2026 – Des 2026
+**Eyva — Smart Study Companion** | Back-end Developer | FastAPI, Python, YOLO11, Supabase, Next.js | Okt 2026 – Des 2026
 - Membangun backend aplikasi belajar Pomodoro yang memakai webcam untuk menandai tanda kantuk dan menyarankan jeda; backend di Railway, frontend di Vercel
 - Melakukan fine-tuning YOLO11n pada 3.841 gambar dengan 6 kelas: mAP50 0,959 pada 195 gambar uji statis, sekitar 52 ms per frame di CPU
 - Menemukan dan menghapus kebocoran data latih/uji (109 dari 192 gambar uji punya salinan augmentasi di data latih) dengan membagi ulang data per kelompok gambar sumber
@@ -50,22 +50,31 @@ Rekayasa Perangkat Lunak | Jul 2021 – Mei 2024 | Nilai akhir: 87
 - Menjalankan QA manual dan pemeriksaan rilis, serta menjaga dokumentasi dan kontrak OpenAPI tetap selaras antara frontend dan backend
 
 **EduPortal SiberMu — Landing Page Layanan Kemahasiswaan** | Front-end Developer | Next.js, React, GSAP, Lenis | Sep 2026
-- Membangun situs satu halaman yang responsif dengan carousel, filter kategori, dialog dan FAQ dalam tim 3 orang, mendukung reduced-motion dan kontrol keyboard
+- Membangun prototipe portal web layanan kemahasiswaan berkinerja tinggi dalam tim 3 orang, mengintegrasikan GSAP ScrollTrigger dan Lenis smooth scroll untuk menghasilkan interaksi visual 60 FPS tanpa cumulative layout shift (CLS)
+- Merancang dialog modal yang dapat dioperasikan penuh dengan keyboard, filter kategori, dan carousel responsif dengan kepatuhan kontras WCAG AA dan dukungan prefers-reduced-motion
 - Demo: eduportal-sibermu.vercel.app | Kode: github.com/Admrlrdj/eduportal-sibermu
 
 **Situs LMS Hyper Optimum** | Back-end Developer | WordPress, WPLMS, myCred, SCORM, PWA | Des 2025 – Jan 2026
-- Membangun sistem manajemen pembelajaran untuk pelatihan organisasi dengan hierarki empat tingkat (Country, Region, City, Store)
-- Menerapkan kontrol akses berbasis peran, aturan pendaftaran otomatis berdasarkan peran dan lokasi, leaderboard gamifikasi berjenjang, pelacakan SCORM dan akses PWA
+- Membangun arsitektur backend sistem manajemen pembelajaran perusahaan dengan hierarki 4 tingkat (Country, Region, City, Store) dan isolasi data multi-tenant untuk 1.400+ staf aktif
+- Menerapkan kontrol akses berbasis peran (RBAC), aturan pendaftaran kurikulum otomatis, pelacakan kepatuhan SCORM 1.2/2004, dan ekonomi poin gamifikasi myCred dengan leaderboard cabang berjenjang
 
 **Situs Save Raja Ampat** | Front-end Developer | Next.js 16, React 19, TypeScript, Tailwind CSS, Framer Motion, Leaflet, Recharts | Des 2025
-- Mengembangkan situs advokasi lingkungan yang interaktif dalam tim 3 orang dengan cerita berbasis parallax, visualisasi data (Recharts) dan peta (Leaflet)
+- Mengembangkan aplikasi web advokasi lingkungan interaktif dalam tim 3 orang, menerapkan storytelling parallax multi-bidang (pulau hingga dasar laut) dan kursor kustom menggunakan Next.js dan Tailwind CSS
+- Mengintegrasikan grafik data interaktif berbasis Recharts untuk indikator keanekaragaman hayati laut dan peta geospasial Leaflet dengan marker zona konservasi kustom
+- Demo: save-raja-ampat.vercel.app
 
 **Situs Company Profile Warkop Setia Abadi** | Front-end Developer | HTML5, CSS3, JavaScript, Slick | Mar 2025 – Jun 2025
-- Mengembangkan situs company profile yang sepenuhnya responsif dari nol dengan Flexbox, Grid dan slider menu
+- Merancang dan membangun company profile dan katalog menu mobile-first dari nol menggunakan HTML5 semantik, CSS3 Grid/Flexbox, dan slider Slick, meraih skor performa Lighthouse 100/100 (total bundle <150KB)
+- Mengintegrasikan pemesanan WhatsApp 1-klik otomatis dengan template pesan terisi nama menu dan peta lokasi Google Maps
+- Demo: admrlrdj.github.io/setia-abadi
 
 ---
 
 ## PENGALAMAN
+
+**Community & External Core Team** — Google Developer Groups on Campus, IPB University | Sep 2026 – Jul 2027
+- Mengelola server Discord resmi GDGOC IPB sebagai pusat interaksi komunitas, mengoordinasikan onboarding anggota, moderasi, serta kemitraan eksternal antar-komunitas teknologi
+- Memelihara dan mengembangkan Bot Discord GDGOC untuk automasi manajemen server, penetapan role interaktif, dan notifikasi kegiatan berkala
 
 **Ketua Divisi Humas** — Kabinet Infantry, Informatics Management SV IPB | Des 2025 – Nov 2026
 - Memimpin divisi hubungan masyarakat Kabinet Infantry dan menyampaikan informasi seputar Infantry kepada mahasiswa Teknologi Rekayasa Perangkat Lunak

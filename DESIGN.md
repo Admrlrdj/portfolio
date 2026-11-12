@@ -33,7 +33,7 @@ Penyimpangan dari usulan spec: aksen terang `#E5532D` hanya 3,4:1 di atas kertas
 
 - Ikon bagian (monitor, kalender, rak buku, bingkai, ponsel, kertas CV) adalah benda isometrik buatan sendiri dari helper `components/scene/iso.tsx`, sama dengan bahasa visual ruang kerja. Alasannya: satu identitas yang berasal dari cerita situs, bukan set ikon bawaan yang tampak sama di semua situs.
 - Logo teknologi memakai paket `simple-icons` karena logo merek adalah ikon yang relevan (React, Next.js, Python, dan seterusnya). Satu warna (`currentColor`), tanpa warna merek, supaya palet tetap satu aksen. Teknologi tanpa ikon tampil sebagai teks.
-- Setiap proyek punya sampul SVG buatan sendiri yang menggambarkan konsepnya (deteksi mata tertutup di Eyva, dulu Loopa, pin rumah sakit dan kartu bandingkan di SiagaRS, pembanding before/after di Save Raja Ampat, empat tingkat hierarki di LMS, carousel di EduPortal, gelas kopi di Warkop). Tanpa angka karangan; teks di dalam sampul hanya nama kelas atau istilah yang memang ada di proyeknya.
+- Setiap proyek punya sampul SVG buatan sendiri yang menggambarkan konsepnya (deteksi mata tertutup di Eyva, pin rumah sakit dan kartu bandingkan di SiagaRS, pembanding before/after di Save Raja Ampat, empat tingkat hierarki di LMS, carousel di EduPortal, gelas kopi di Warkop). Tanpa angka karangan; teks di dalam sampul hanya nama kelas atau istilah yang memang ada di proyeknya.
 
 ## Gerak (MOTION 3)
 
